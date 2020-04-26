@@ -1,0 +1,26 @@
+/**
+ * @author Carlos Piñan
+ *
+ * Apply it in your root build.gradle
+ *
+ * Example: buildscript {*  apply from: './dependencies.gradle'
+ *
+ * For this version it's mandatory to use:
+ *
+ composeOptions {kotlinCompilerVersion "$jetpack_compose_kotlin_compiler_version"
+ kotlinCompilerExtensionVersion "$jetpack_compose_version"}
+ */
+ext.jetpack_compose_version = "0.1.0-dev09"
+
+ext.jetpack_compose_namespace = "androidx.ui"
+ext.jetpack_compose_runtime_namespace = "androidx.compose"
+ext.jetpack_compose_kotlin_compiler_version = "1.3.61-dev-withExperimentalGoogleExtensions-20200129"
+
+ext.compose_library = [
+        runtime     : "${jetpack_compose_runtime_namespace}:compose-runtime:${jetpack_compose_version}",
+
+        ui_framework: "${jetpack_compose_namespace}:ui-framework:${jetpack_compose_version}",
+        ui_layout   : "${jetpack_compose_namespace}:ui-layout:${jetpack_compose_version}",
+        ui_material : "${jetpack_compose_namespace}:ui-material:${jetpack_compose_version}",
+        ui_tooling  : "${jetpack_compose_namespace}:ui-tooling:${jetpack_compose_version}"
+]
