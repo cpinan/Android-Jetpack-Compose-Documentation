@@ -1,21 +1,10 @@
 # Jetpack Compose.md
 
-![](https://i.stack.imgur.com/tSJEV.png?s=512)
-
-![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg) ![](https://img.shields.io/github/tag/pandao/editor.md.svg) ![](https://img.shields.io/github/release/pandao/editor.md.svg) ![](https://img.shields.io/github/issues/pandao/editor.md.svg) ![](https://img.shields.io/bower/v/editor.md.svg)
-
-
-**Table of Contents**
-
-[TOCM]
-
-[TOC]
-
-#Intro
+# Intro
 
 Jetpack Compose is a suite of libraries within the AndroidX ecosystem. For more information, see our [project page](https://developer.android.com/jetpackcompose)
 
-##Syntax
+## Syntax
 
 Jetpack Compose uses composable functions instead of XML layouts to define UI components. You can see this in action in the demos, like `androidx.ui.material.demos.ButtonDemo.kt`. More information can be found in the [compiler README](https://android.googlesource.com/platform/frameworks/support/+/androidx-master-dev/compose/README.md).
 
@@ -24,19 +13,16 @@ You may notice some parts of the codebase use an XML-like syntax. This was an ex
 ## Compiler
 Composable functions are built using a custom Kotlin compiler plugin. More information about the compiler plugin is available in [this README](https://android.googlesource.com/platform/frameworks/support/+/androidx-master-dev/compose/README.md).
 
-##Structure
-
-
-
-###Current version
-###Namespace
-###Modules
-#Examples
-#Cookbook
-#References
+## Structure
+### Current version
+### Namespace
+### Modules
+# Examples
+# Cookbook
+# References
 
 [Jetpack Compose Documentation](https://developer.android.com/jetpack/compose)
 
-#Collaborate
+# Collaborate
 
 If you find any issue or want to collaborate, please report or fork this repo.
