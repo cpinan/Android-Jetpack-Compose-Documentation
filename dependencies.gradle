@@ -17,10 +17,41 @@ ext.jetpack_compose_runtime_namespace = "androidx.compose"
 ext.jetpack_compose_kotlin_compiler_version = "1.3.61-dev-withExperimentalGoogleExtensions-20200129"
 
 ext.compose_library = [
-        runtime     : "${jetpack_compose_runtime_namespace}:compose-runtime:${jetpack_compose_version}",
+        runtime          : "${jetpack_compose_runtime_namespace}:compose-runtime:${jetpack_compose_version}",
 
-        ui_framework: "${jetpack_compose_namespace}:ui-framework:${jetpack_compose_version}",
-        ui_layout   : "${jetpack_compose_namespace}:ui-layout:${jetpack_compose_version}",
-        ui_material : "${jetpack_compose_namespace}:ui-material:${jetpack_compose_version}",
-        ui_tooling  : "${jetpack_compose_namespace}:ui-tooling:${jetpack_compose_version}"
+        // Module that collects all demos across ui and packages them into one demo APK
+        ui_framework     : "${jetpack_compose_namespace}:ui-framework:${jetpack_compose_version}",
+
+        // Base components exposed by the system as building blocks. This includes Draw, Layout, Text, etc.
+        ui_layout        : "${jetpack_compose_namespace}:ui-layout:${jetpack_compose_version}",
+
+        // Basic layout components
+        ui_material      : "${jetpack_compose_namespace}:ui-material:${jetpack_compose_version}",
+
+        // Preview component
+        ui_tooling       : "${jetpack_compose_namespace}:ui-tooling:${jetpack_compose_version}",
+
+        // Wrappers and adapters for existing Android Views
+        ui_animation     : "${jetpack_compose_namespace}:ui-animation:${jetpack_compose_version}",
+
+        // Animation components
+        ui_animation_core: "${jetpack_compose_namespace}:ui-animation-core:${jetpack_compose_version}",
+
+        // Internal declarations for the animations system
+        ui_core          : "${jetpack_compose_namespace}:ui-core:${jetpack_compose_version}",
+
+        // Set of UI components built according to the Material spec
+        ui_platform      : "${jetpack_compose_namespace}:ui-platform:${jetpack_compose_version}",
+
+        // Testing framework
+        ui_text          : "${jetpack_compose_namespace}:ui-text:${jetpack_compose_version}",
+
+        // Base Text composables
+        ui_text_core     : "${jetpack_compose_namespace}:ui-text-core:${jetpack_compose_version}",
+
+        // Text engine that contains base text components
+        ui_text_android  : "${jetpack_compose_namespace}:ui-text-android:${jetpack_compose_version}",
+
+        // Internal implementation that allows separation of android implementation from host-side tests
+        ui_test          : "${jetpack_compose_namespace}:ui-test:${jetpack_compose_version}"
 ]
