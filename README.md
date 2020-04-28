@@ -15,10 +15,68 @@ Composable functions are built using a custom Kotlin compiler plugin. More infor
 
 ## Structure
 ### Current version
-### Namespace
+  
+The version used right now is: 0.1.0-dev09 You can take a look at the file:
+
+[dependencies.gradle](https://github.com/cpinan/Android-Jetpack-Compose-Documentation/blob/master/dependencies.gradle)
+
+### Dependencies
+
+The actual dependency prefix is: *androidx.ui*
+
+For the compiler is: *androidx.compose*
+
+Take a look here for more detail:
+
+[dependencies.gradle](https://github.com/cpinan/Android-Jetpack-Compose-Documentation/blob/master/dependencies.gradle)
+
 ### Modules
+
+Right now we have the following dependencies:
+
+* compose-runtime: Mandatory to run the current compose version
+
+* ui-framework: Module that collects all demos across ui and packages them into one demo APK
+
+* ui-layout: Base components exposed by the system as building blocks. This includes Draw, Layout, Text, etc.
+
+* ui-material: Basic layout components
+
+* ui-tooling: Preview component
+
+* ui-animation: Wrappers and adapters for existing Android Views
+
+* ui-animation-core: Animation components
+
+* ui-core: Internal declarations for the animations system
+
+* ui-platform: Set of UI components built according to the Material spec
+
+* ui-text: Testing framework
+
+* ui-text-core: Base Text composable
+
+* ui-text-android: Text engine that contains base text components
+
+* ui-test: Internal implementation that allows separation of android implementation from host-side tests
+
 # Examples
+
+[Compose Basic](https://github.com/cpinan/Android-Jetpack-Compose-Documentation/tree/master/JetpackComposeBasics)
+
+[Compose Live Preview Example based on setup guide](https://github.com/cpinan/Android-Jetpack-Compose-Documentation/tree/master/JetpackComposeLivePreview)
+
+[Compose Example Based on the Flutter Tutorial](https://github.com/cpinan/Android-Jetpack-Compose-Documentation/tree/master/FlutterDesigninCompose)
+
 # Cookbook
+
+Still in progress, here you can take a look at the work in progress:
+
+[Cookbook Compose](https://github.com/cpinan/Android-Jetpack-Compose-Documentation/tree/master/JetpackComposeCookbook)
+
+## Design examples:
+
+
 # References
 
 [Jetpack Compose Documentation](https://developer.android.com/jetpack/compose)
