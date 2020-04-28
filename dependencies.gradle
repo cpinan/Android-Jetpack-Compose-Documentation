@@ -46,7 +46,7 @@ ext.compose_library = [
         // Testing framework
         ui_text          : "${jetpack_compose_namespace}:ui-text:${jetpack_compose_version}",
 
-        // Base Text composables
+        // Base Text composable
         ui_text_core     : "${jetpack_compose_namespace}:ui-text-core:${jetpack_compose_version}",
 
         // Text engine that contains base text components
