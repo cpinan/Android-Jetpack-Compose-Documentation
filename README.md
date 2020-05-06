@@ -68,6 +68,8 @@ Right now we have the following dependencies:
 
 [Compose Example Based on the Flutter Tutorial](https://github.com/cpinan/Android-Jetpack-Compose-Documentation/tree/master/FlutterDesigninCompose)
 
+[Gmail Compose Sample based on Droidcon](https://github.com/cpinan/Android-Jetpack-Compose-Documentation/tree/master/ComposeGmail)
+
 # Cookbook
 
 Still in progress, here you can take a look at the work in progress:
@@ -82,6 +84,8 @@ Still in progress, here you can take a look at the work in progress:
 [Jetpack Compose Documentation](https://developer.android.com/jetpack/compose)
 
 [Compose 0.1 DevFest Lima](https://github.com/cpinan/Android-Jetpack-Composer)
+
+[Droidcon Become a Composer](https://www.droidcon.com/media-detail?video=412304809)
 
 # Collaborate
 
