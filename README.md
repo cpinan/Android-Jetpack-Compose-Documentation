@@ -72,7 +72,6 @@ Right now we have the following dependencies:
 
 [Compose Basic UI Test](https://github.com/cpinan/Android-Jetpack-Compose-Documentation/tree/master/TestBasicCompose)
 
-
 # Cookbook
 
 Still in progress, here you can take a look at the work in progress:
