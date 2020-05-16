@@ -52,15 +52,14 @@ dependencies {
 
     // COMPOSE
     implementation compose_library.runtime
+    implementation compose_library.compiler
 
-    implementation compose_library.ui_framework
     implementation compose_library.ui_layout
     implementation compose_library.ui_material
     implementation compose_library.ui_tooling
     implementation compose_library.ui_animation
     implementation compose_library.ui_animation_core
     implementation compose_library.ui_core
-    implementation compose_library.ui_platform
     implementation compose_library.ui_text_core
     implementation compose_library.ui_text_android
 

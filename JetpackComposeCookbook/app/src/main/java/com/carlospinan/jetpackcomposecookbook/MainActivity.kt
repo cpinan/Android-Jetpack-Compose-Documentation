@@ -38,6 +38,6 @@ fun AppBarSample() {
 @Composable
 fun DefaultPreview() {
     MaterialTheme {
-        AppBarSample()
+        AppBarSampleActivity()
     }
 }

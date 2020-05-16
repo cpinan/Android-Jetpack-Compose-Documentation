@@ -1,6 +1,6 @@
 # Jetpack Compose.md
 
-# Intro
+## Intro
 
 Jetpack Compose is a suite of libraries within the AndroidX ecosystem. For more information, see our [project page](https://developer.android.com/jetpackcompose)
 
@@ -16,7 +16,7 @@ Composable functions are built using a custom Kotlin compiler plugin. More infor
 ## Structure
 ### Current version
   
-The version used right now is: 0.1.0-dev09 You can take a look at the file:
+The version used right now is: 0.1.0-dev11 You can take a look at the file:
 
 [dependencies.gradle](https://github.com/cpinan/Android-Jetpack-Compose-Documentation/blob/master/dependencies.gradle)
 
@@ -60,7 +60,7 @@ Right now we have the following dependencies:
 
 * ui-test: Internal implementation that allows separation of android implementation from host-side tests
 
-# Examples
+## Examples
 
 [Compose Basic](https://github.com/cpinan/Android-Jetpack-Compose-Documentation/tree/master/JetpackComposeBasics)
 
@@ -72,16 +72,16 @@ Right now we have the following dependencies:
 
 [Compose Basic UI Test](https://github.com/cpinan/Android-Jetpack-Compose-Documentation/tree/master/TestBasicCompose)
 
-# Cookbook
+### Cookbook
 
 Still in progress, here you can take a look at the work in progress:
 
 [Cookbook Compose](https://github.com/cpinan/Android-Jetpack-Compose-Documentation/tree/master/JetpackComposeCookbook)
 
-## Design examples:
+### Design examples:
 
 
-# References
+## References
 
 [Jetpack Compose Documentation](https://developer.android.com/jetpack/compose)
 
@@ -91,6 +91,10 @@ Still in progress, here you can take a look at the work in progress:
 
 [Compose Samples - Google](https://github.com/android/compose-samples)
 
-# Collaborate
+## Collaborate
 
 If you find any issue or want to collaborate, please report or fork this repo.
+
+Thanks for your collaboration to:
+
+[Kevin Gomez](https://github.com/Naibeck)

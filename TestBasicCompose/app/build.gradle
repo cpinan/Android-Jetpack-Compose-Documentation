@@ -52,11 +52,11 @@ dependencies {
 
     // COMPOSE
     implementation compose_library.runtime
+    implementation compose_library.compiler
 
-    implementation compose_library.ui_framework
     implementation compose_library.ui_layout
     implementation compose_library.ui_material
     implementation compose_library.ui_tooling
-    androidTestImplementation compose_library.ui_platform
+
     androidTestImplementation compose_library.ui_test
 }
