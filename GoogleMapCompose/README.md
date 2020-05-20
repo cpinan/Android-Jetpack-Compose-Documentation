@@ -14,3 +14,6 @@ The goal was to find a solution to replicate what it was being done with the UIS
 * MapView
 * ConstraintSet
 * ConstraintLayout
+
+## Author
+[Kevin Gomez](https://github.com/Naibeck)

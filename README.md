@@ -72,6 +72,7 @@ Right now we have the following dependencies:
 
 [Compose Basic UI Test](https://github.com/cpinan/Android-Jetpack-Compose-Documentation/tree/master/TestBasicCompose)
 
+[GoogleMaps on Compose](https://github.com/Naibeck/Android-Jetpack-Compose-Documentation/tree/mapview-compose/GoogleMapCompose)
 ### Cookbook
 
 Still in progress, here you can take a look at the work in progress:
