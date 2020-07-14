@@ -2,7 +2,8 @@ package com.carlospinan.jetpackcomposecookbook
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.Model
+import androidx.compose.getValue
+import androidx.compose.state
 import androidx.ui.core.Modifier
 import androidx.ui.core.setContent
 import androidx.ui.foundation.Text
@@ -22,7 +23,7 @@ class AppBarSampleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val currentBarStyle = AppBarStyle()
+            val currentBarStyle by state { AppBarStyle() }
             MaterialTheme {
                 Column {
                     Button(
@@ -41,7 +42,6 @@ class AppBarSampleActivity : AppCompatActivity() {
         }
     }
 
-    @Model
     data class AppBarStyle(var type: Int = 0) {
         fun next() {
             type++

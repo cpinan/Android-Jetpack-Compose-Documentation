@@ -2,10 +2,11 @@ package com.carlospinan.composegmail.view
 
 import androidx.compose.Composable
 import androidx.ui.core.Modifier
-import androidx.ui.foundation.AdapterList
 import androidx.ui.foundation.Box
 import androidx.ui.foundation.Icon
 import androidx.ui.foundation.Text
+import androidx.ui.foundation.clickable
+import androidx.ui.foundation.lazy.LazyColumnItems
 import androidx.ui.graphics.Color
 import androidx.ui.layout.Row
 import androidx.ui.layout.padding
@@ -38,7 +39,7 @@ sealed class EmailNavigationItem {
 
 @Composable
 fun EmailNavigation(navItems: List<EmailNavigationItem>) {
-    AdapterList(data = navItems) { navItem ->
+    LazyColumnItems(items = navItems) { navItem ->
         when (navItem) {
             is EmailNavigationItem.AppNameItem -> {
                 AppName()
@@ -96,7 +97,9 @@ fun SectionLabel(label: String) {
 @Composable
 fun NavigationDestination(name: String, icon: Int?, count: String?, onClick: () -> Unit) {
     Row(
-        modifier = Modifier.padding(top = 8.dp, bottom = 8.dp, start = 16.dp, end = 16.dp)
+        modifier = Modifier
+            .padding(top = 8.dp, bottom = 8.dp, start = 16.dp, end = 16.dp)
+            .clickable(onClick = onClick)
     ) {
         Box(
             modifier = Modifier.preferredSize(36.dp)

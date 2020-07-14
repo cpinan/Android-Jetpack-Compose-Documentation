@@ -1,16 +1,24 @@
 package com.carlospinan.composegmail.entity
 
-import androidx.compose.Model
+import androidx.compose.getValue
+import androidx.compose.mutableStateOf
+import androidx.compose.setValue
 
 /**
  * @author Carlos Piñan
  */
-@Model
-data class Email(
-    val sender: String,
-    val important: Boolean,
-    val receiptTime: String,
-    val subject: String,
-    val body: String,
-    var starred: Boolean
-)
+class Email(
+    sender: String,
+    important: Boolean,
+    receiptTime: String,
+    subject: String,
+    body: String,
+    starred: Boolean
+) {
+    var sender by mutableStateOf(sender)
+    var important by mutableStateOf(important)
+    var receiptTime by mutableStateOf(receiptTime)
+    var subject by mutableStateOf(subject)
+    var body by mutableStateOf(body)
+    var starred by mutableStateOf(starred)
+}

@@ -3,11 +3,11 @@ package com.naibeck.testbasiccompose
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
-import androidx.compose.Model
+import androidx.compose.getValue
+import androidx.compose.setValue
+import androidx.compose.state
 import androidx.ui.core.setContent
 import androidx.ui.foundation.Text
-import androidx.ui.layout.ConstraintLayout
-import androidx.ui.layout.ConstraintSet
 import androidx.ui.material.Button
 import androidx.ui.material.MaterialTheme
 import androidx.ui.tooling.preview.Preview
@@ -16,20 +16,24 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Counter(state = CounterState())
+            Counter(CounterState())
         }
     }
 }
 
 @Composable
-fun Counter(state: CounterState) {
-    Button(onClick = { state.counter++ }) {
-        Text(text = "I've been clicked ${state.counter} times")
+fun Counter(counter: CounterState) {
+    var counterState by state { counter }
+    Button(onClick = {
+        counterState = counterState.copy(
+            counter = counterState.counter + 1
+        )
+    }) {
+        Text(text = "I've been clicked ${counterState.counter} times")
     }
 }
 
-@Model
-class CounterState(var counter: Int = 0)
+data class CounterState(var counter: Int = 0)
 
 @Preview
 @Composable

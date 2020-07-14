@@ -5,11 +5,11 @@ import androidx.compose.state
 import androidx.ui.core.Alignment
 import androidx.ui.core.Modifier
 import androidx.ui.core.clip
-import androidx.ui.foundation.AdapterList
 import androidx.ui.foundation.Box
 import androidx.ui.foundation.Icon
 import androidx.ui.foundation.Text
-import androidx.ui.foundation.selection.Toggleable
+import androidx.ui.foundation.lazy.LazyColumnItems
+import androidx.ui.foundation.selection.toggleable
 import androidx.ui.foundation.shape.corner.CircleShape
 import androidx.ui.graphics.Color
 import androidx.ui.layout.*
@@ -164,12 +164,11 @@ fun Star(starred: Boolean, onStarClick: (Boolean) -> Unit) {
     else
         Color.DarkGray
 
-    Toggleable(value = starred, onValueChange = onStarClick) {
-        Icon(
-            asset = vectorResource(id = R.drawable.ic_baseline_star_24),
-            tint = color
-        )
-    }
+    Icon(
+        modifier = Modifier.toggleable(value = starred, onValueChange = onStarClick),
+        asset = vectorResource(id = R.drawable.ic_baseline_star_24),
+        tint = color
+    )
 }
 
 @Composable
@@ -202,7 +201,7 @@ fun EmailList(
 
     Scaffold(
         scaffoldState = state,
-        topAppBar = {
+        topBar = {
             EmailAppbar {
                 val newState = if (state.drawerState == DrawerState.Closed) {
                     ScaffoldState(drawerState = DrawerState.Opened)
@@ -222,7 +221,7 @@ fun EmailList(
         },
         floatingActionButtonPosition = Scaffold.FabPosition.End
     ) {
-        AdapterList(data = emailList) { email ->
+        LazyColumnItems(items = emailList) { email ->
             EmailItem(email = email)
         }
     }

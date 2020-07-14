@@ -7,10 +7,11 @@
  *
  * For this version it's mandatory to use:
  *
- composeOptions {kotlinCompilerVersion "$jetpack_compose_kotlin_compiler_version"
- kotlinCompilerExtensionVersion "$jetpack_compose_version"}
+ * composeOptions {kotlinCompilerVersion "$jetpack_compose_kotlin_compiler_version"
+ * kotlinCompilerExtensionVersion "$jetpack_compose_version"}*
+ * https://developer.android.com/jetpack/androidx/releases/ui#0.1.0-dev14
  */
-ext.jetpack_compose_version = "0.1.0-dev11"
+ext.jetpack_compose_version = "0.1.0-dev14"
 
 ext.jetpack_compose_namespace = "androidx.ui"
 ext.jetpack_compose_runtime_namespace = "androidx.compose"
@@ -18,7 +19,7 @@ ext.jetpack_compose_kotlin_compiler_version = "1.3.70-dev-withExperimentalGoogle
 
 ext.compose_library = [
         runtime          : "${jetpack_compose_runtime_namespace}:compose-runtime:${jetpack_compose_version}",
-        compiler          : "${jetpack_compose_runtime_namespace}:compose-compiler:${jetpack_compose_version}",
+        compiler         : "${jetpack_compose_runtime_namespace}:compose-compiler:${jetpack_compose_version}",
 
         // Module that collects all demos across ui and packages them into one demo APK
         ui_framework     : "${jetpack_compose_namespace}:ui-framework:${jetpack_compose_version}",

@@ -3,7 +3,9 @@ package com.carlospinan.flutterdesignincompose
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
-import androidx.compose.Model
+import androidx.compose.getValue
+import androidx.compose.setValue
+import androidx.compose.state
 import androidx.ui.core.*
 import androidx.ui.foundation.*
 import androidx.ui.foundation.shape.corner.RoundedCornerShape
@@ -17,6 +19,7 @@ import androidx.ui.text.font.FontWeight
 import androidx.ui.text.style.TextAlign
 import androidx.ui.unit.dp
 import androidx.ui.unit.sp
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +36,7 @@ fun Dashboard() {
         colors = lightColorPalette()
     ) {
         Scaffold(
-            topAppBar = {
+            topBar = {
                 TopAppBar(
                     modifier = Modifier.fillMaxWidth()
                 ) {
@@ -67,7 +70,8 @@ fun ImageSection() {
 }
 
 @Composable
-fun TitleSection(starAction: StarAction = StarAction()) {
+fun TitleSection() {
+    var action by state { StarAction() }
     Box(
         modifier = Modifier.padding(32.dp)
     ) {
@@ -92,25 +96,29 @@ fun TitleSection(starAction: StarAction = StarAction()) {
                     )
                 )
             }
-            Clickable(onClick = {
-                starAction.enabled = !starAction.enabled
-            }) {
-                Row(
-                    verticalGravity = Alignment.CenterVertically
-                ) {
-                    Icon(
-                        modifier = Modifier.width(32.dp)
-                            .height(32.dp),
-                        asset = imageResource(
-                            id = if (starAction.enabled) android.R.drawable.star_on else android.R.drawable.star_off
-                        ),
-                        tint = if (starAction.enabled) Color.Red else Color.Gray
-                    )
-                    Text(
-                        text = "41",
-                        modifier = Modifier.padding(start = 8.dp)
-                    )
-                }
+            Row(
+                modifier = Modifier.clickable(
+                    onClick =
+                    {
+                        action = action.copy(
+                            enabled = !action.enabled
+                        )
+                    }
+                ),
+                verticalGravity = Alignment.CenterVertically
+            ) {
+                Icon(
+                    modifier = Modifier.width(32.dp)
+                        .height(32.dp),
+                    asset = imageResource(
+                        id = if (action.enabled) android.R.drawable.star_on else android.R.drawable.star_off
+                    ),
+                    tint = if (action.enabled) Color.Red else Color.Gray
+                )
+                Text(
+                    text = "41",
+                    modifier = Modifier.padding(start = 8.dp)
+                )
             }
         }
     }
@@ -139,27 +147,27 @@ fun ButtonsSection() {
 
 @Composable
 fun ActionButton(title: String, resource: Int) {
-    Clickable(
-        onClick = {
-            println("$title - $resource")
-        }) {
-        Column(
-            horizontalGravity = Alignment.CenterHorizontally
-        ) {
-            Icon(
-                asset = imageResource(id = resource),
-                tint = MaterialTheme.colors.primary
+    Column(
+        modifier = Modifier.clickable(
+            onClick = {
+                println("$title - $resource")
+            }
+        ),
+        horizontalGravity = Alignment.CenterHorizontally
+    ) {
+        Icon(
+            asset = imageResource(id = resource),
+            tint = MaterialTheme.colors.primary
+        )
+        Text(
+            modifier = Modifier.padding(top = 8.dp),
+            text = title.toUpperCase(Locale.getDefault()),
+            style = TextStyle(
+                color = MaterialTheme.colors.primary,
+                fontSize = 12.sp,
+                fontWeight = FontWeight.W400
             )
-            Text(
-                modifier = Modifier.padding(top = 8.dp),
-                text = title.toUpperCase(),
-                style = TextStyle(
-                    color = MaterialTheme.colors.primary,
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.W400
-                )
-            )
-        }
+        )
     }
 }
 
@@ -175,5 +183,4 @@ fun DescriptionSection() {
     )
 }
 
-@Model
 data class StarAction(var enabled: Boolean = false)

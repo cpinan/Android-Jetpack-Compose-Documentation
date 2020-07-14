@@ -3,7 +3,6 @@ package com.carlospinan.jetpackcomposelivepreview
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
-import androidx.compose.Model
 import androidx.ui.core.Alignment
 import androidx.ui.core.Modifier
 import androidx.ui.core.clip
@@ -50,15 +49,15 @@ fun TutorialTemplate(
         typography = typography
     ) {
         Scaffold(
-            topAppBar = {
+            topBar = {
                 TopAppBar(
                     {
                         Text("Tutorial Template")
                     }
                 )
             },
-            bottomAppBar = {
-                BottomAppBar(fabConfiguration = it, cutoutShape = CircleShape) {
+            bottomBar = {
+                BottomAppBar(cutoutShape = CircleShape) {
 
                 }
             }
@@ -120,7 +119,6 @@ fun TutorialTemplateScaledPreview() {
     TutorialTemplate()
 }
 
-@Model
 data class Post(
     val title: String,
     val author: String,

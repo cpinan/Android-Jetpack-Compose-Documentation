@@ -57,8 +57,8 @@ fun SimpleBottomAppBarCutoutWithScaffold() {
     val fabShape = CircleShape
 
     Scaffold(
-        bottomAppBar = { fabConfiguration ->
-            BottomAppBar(fabConfiguration = fabConfiguration, cutoutShape = fabShape) {
+        bottomBar = {
+            BottomAppBar(cutoutShape = fabShape) {
                 IconButton(onClick = { /* doSomething() */ }) {
                     Icon(Icons.Filled.Favorite)
                 }
@@ -74,7 +74,7 @@ fun SimpleBottomAppBarCutoutWithScaffold() {
                 onClick = { /* doSomething() */ }
             )
         },
-        floatingActionButtonPosition = Scaffold.FabPosition.EndDocked
+        floatingActionButtonPosition = Scaffold.FabPosition.End
     ) {
         Text("Your app goes here")
     }
