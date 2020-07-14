@@ -24,6 +24,9 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
+/**
+ * https://android-review.googlesource.com/c/platform/frameworks/support/+/1321040/8/ui/ui-layout/integration-tests/layout-demos/src/main/java/androidx/ui/layout/demos/ConstraintLayoutDemo.kt
+ */
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     private var mapView: MapView? = null
 
@@ -57,12 +60,14 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
 @Composable
 fun MainContent(view: View?) {
-    ConstraintLayout(constraintSet = ConstraintSet {
-        val image = tag("centerImage")
-        image.apply {
-            center()
+    ConstraintLayout(
+        ConstraintSet2 {
+            val image = createRefFor("centerImage")
+            constrain(image) {
+                centerTo(parent)
+            }
         }
-    }) {
+    ) {
         Column {
             Row(modifier = Modifier.weight(1.0f, fill = true)) {
                 view?.let { view ->
