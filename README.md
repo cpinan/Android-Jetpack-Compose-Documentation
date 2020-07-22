@@ -13,6 +13,23 @@ You may notice some parts of the codebase use an XML-like syntax. This was an ex
 ## Compiler
 Composable functions are built using a custom Kotlin compiler plugin. More information about the compiler plugin is available in [this README](https://android.googlesource.com/platform/frameworks/support/+/androidx-master-dev/compose/README.md).
 
+mkdir ~/bin
+PATH=~/bin:$PATH
+
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+
+mkdir ~/jetpackCompose
+cd ~/jetpackCompose
+
+repo init -u https://android.googlesource.com/platform/manifest -b androidx-master-dev
+
+repo sync -j8 -c
+
+cd ~/jetpackCompose/frameworks/support/ui
+
 ## Structure
 ### Current version
   
